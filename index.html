@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title>quiz2</title>
+</head>
+<body>
+	<style>
+ body{
+ 	background-image: url(https://i.pinimg.com/736x/48/70/c7/4870c71f1ec6c96991b2ed20301595ab.jpg);
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
+ }
+
+ h1{
+ 	font-family: Garamond;
+ 	font-size: 60px;
+ 	color: #d1648a;
+ 	background-color: #f5dfba;
+ }
+
+ h2{
+ 	font-size: 15px;
+ 	color: #454344;
+ 	font-family: Garamond;
+ }
+
+.row{
+	display: flex;
+}
+
+	</style>
+<br>
+<center>
+<container> 
+
+<br><h1>score analyzer</h1>
+<br><br>
+<details ontoggle="console.log('instructions toggled')">
+<summary>instructions</summary>
+<p>input your quarterly grade for math, science and, social studies</p>
+</details> <br>
+<div class="row">
+<div class="col-md-4">
+<img src="https://cdn.pixabay.com/photo/2021/10/05/21/46/math-6683827_1280.png" width="300"><br>
+<input type="number" id="num1" placeholder="math">
+</div>
+<div class="col-md-4">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkpwYBgqB9L4bX3KXBTVk_dOo5AE0GrCZxdg&s" width="300"> <br>
+<input type="number" id="num2" placeholder="science">
+</div>
+<div class="col-md-4">
+<img src="https://ih1.redbubble.net/image.1106843305.5102/fposter,small,wall_texture,square_product,600x600.jpg" width="300"><br>
+<input type="number"id="num3" placeholder="social studies">
+</div>
+</div>
+<br>
+<button type="button" class="btn btn-light" onclick="calculate()">click</button>
+
+<script>
+
+	function calculate() {
+		let n1 = document.getElementById("num1").valueAsNumber;
+		let n2 = document.getElementById("num2").valueAsNumber;
+		let n3 = document.getElementById("num3").valueAsNumber;
+
+		let avg = (n1 + n2 + n3) /3;
+
+		switch(true){
+	case (avg >= 100 && avg <=94 ) :
+		avg = "excellent!"
+		alert(avg);
+	break;
+	case (avg >= 87 && avg <=93 ) :
+		alert("above satisfactory!");
+	case (avg >= 80 && avg <=86 ) :
+		alert("satisfactory!");
+	case (avg >= 75 && avg <=79 ) :
+		alert("needs improvement");
+	case (avg >= 70 && avg <=74 ) :
+		alert("poor");
+		break;
+	default:
+		alert("error");
+	}
+
+
+	}
+</script>
+</center>
+</container>
+</body>
+</html>
